@@ -77,6 +77,11 @@ const covers: string[] = [
           <h2>Blood In My Eye</h2>
           <p class="section-caption">by George L. Jackson</p>
         </div>
+        <p class="intro-text">
+          Free pdf of the book is available <a href="https://redyouthnwa.wordpress.com/wp-content/uploads/2018/05/george_l-_jackson_blood_in_my_eyebook4you-org.pdf" target="_blank" class="intro-link">here</a>.
+          Pick up your physical copy from <a href="#location" class="intro-link">Fitz</a>!
+        </p>
+
         <h3 id="selected-chapters" class="chapters-heading">Chapters</h3>
         <ul class="point-list">
           <li>Preface</li>
@@ -181,7 +186,7 @@ const covers: string[] = [
   border: 0;
 }
 .section-heading {
-  margin: 0 0 1rem;
+  margin: 0 0 0rem;
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
