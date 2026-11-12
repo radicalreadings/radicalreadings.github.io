@@ -20,6 +20,7 @@ npm run dev
 | `npm run lint` | Lint the project |
 | `npm run lint:fix` | Lint and auto-fix |
 | `npm run format` | Format `src/` with Prettier |
+| `npm run new-page` | Scaffold a new book page (see [Adding another book](#adding-another-book)) |
 
 ## Structure
 
@@ -29,6 +30,7 @@ One Vue page per book, each its own HTML entry (Vite multi-page build) — no ro
 | --- | --- | --- | --- | --- |
 | The Wretched of the Earth | `fanon/index.html` | `src/entries/wretched.ts` | `src/pages/WretchedOfTheEarth.vue` | `/fanon/` |
 | Settlers | `settlers/index.html` | `src/entries/settlers.ts` | `src/pages/Settlers.vue` | `/settlers/` |
+| Blood In My Eye | `bime/index.html` | `src/entries/bime.ts` | `src/pages/BloodInMyEye.vue` | `/bime/` |
 
 - `src/pages/*.vue` — the book's content, written directly in the page, using the shared `CoverImage` and `QrCode` components
 - `src/App.vue` — the app shell (header/footer); renders whichever page it's given
@@ -38,6 +40,16 @@ One Vue page per book, each its own HTML entry (Vite multi-page build) — no ro
 Cover images go in `public/covers/<book>/`, listed in the page's covers array (e.g. `'covers/wote/....jpg'`). Favicons go in `public/favi/`, referenced from that book's HTML entry.
 
 ## Adding another book
+
+Run `npm run new-page` (needs Python 3.9+). It asks for the title, author, URL slug, meeting date/time and an optional YouTube video. Then it shows what it will create and asks you to confirm. After that it:
+
+- creates the page, entry script, HTML entry and `public/covers/<slug>/` folder from the templates in `scripts/templates/`
+- registers the page in `vite.config.ts` and adds it to the table above
+- optionally points the root redirect at the new page (it asks first; the default is no)
+
+Everything else on the page is placeholder text; search the new page for `TODO`. To change what new pages start out as, edit the templates.
+
+To do it by hand instead:
 
 1. Copy an existing page in `src/pages/` and fill in its own values, including `PAGE_URL` (used for the QR code).
 2. Add an entry script in `src/entries/` that calls `mountPage` with the new page.

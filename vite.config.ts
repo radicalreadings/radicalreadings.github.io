@@ -19,6 +19,7 @@ export default defineConfig({
         root: fileURLToPath(new URL('./index.html', import.meta.url)),
         wretched: fileURLToPath(new URL('./fanon/index.html', import.meta.url)),
         settlers: fileURLToPath(new URL('./settlers/index.html', import.meta.url)),
+        bime: fileURLToPath(new URL('./bime/index.html', import.meta.url)),
       },
     },
   },

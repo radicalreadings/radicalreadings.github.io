@@ -7,8 +7,10 @@ const props = withDefaults(
     alt?: string
     /** How long each cover is shown before cycling to the next, in ms. */
     intervalMs?: number
+    /** CSS aspect-ratio of the frame, e.g. 0.68 or "2 / 3". */
+    aspectRatio?: number | string
   }>(),
-  { alt: '', intervalMs: 3000 },
+  { alt: '', intervalMs: 3000, aspectRatio: 0.68 },
 )
 
 const index = ref(0)
@@ -35,7 +37,7 @@ const currentSrc = computed(() =>
 </script>
 
 <template>
-  <div class="cover-frame">
+  <div class="cover-frame" :style="{ aspectRatio }">
     <Transition name="cover-fade">
       <img v-if="currentSrc" :key="currentSrc" :src="currentSrc" :alt="alt" class="cover-image" loading="lazy" />
     </Transition>
@@ -47,7 +49,6 @@ const currentSrc = computed(() =>
    never resizes as images with different native dimensions cycle through. */
 .cover-frame {
   position: relative;
-  aspect-ratio: 0.68;
   border: var(--border-accent);
   overflow: hidden;
 }
