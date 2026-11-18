@@ -31,6 +31,7 @@ One Vue page per book, each its own HTML entry (Vite multi-page build) — no ro
 | The Wretched of the Earth | `fanon/index.html` | `src/entries/wretched.ts` | `src/pages/WretchedOfTheEarth.vue` | `/fanon/` |
 | Settlers | `settlers/index.html` | `src/entries/settlers.ts` | `src/pages/Settlers.vue` | `/settlers/` |
 | Blood In My Eye | `bime/index.html` | `src/entries/bime.ts` | `src/pages/BloodInMyEye.vue` | `/bime/` |
+| Mutual Aid Discussion | `mutualaid/index.html` | `src/entries/mutualaid.ts` | `src/pages/MutualAidDiscussion.vue` | `/mutualaid/` |
 
 - `src/pages/*.vue` — the book's content, written directly in the page, using the shared `CoverImage` and `QrCode` components
 - `src/App.vue` — the app shell (header/footer); renders whichever page it's given
